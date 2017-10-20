@@ -13,7 +13,7 @@ namespace Bookstore
         {
             bookList = new List<Book>();
 
-            bookList.Add(new Book()
+            bookList.Add (new Book()
             {
                 Author = "J.K. Rowling",
                 Name = "Harry Potter and the Sorcerer's Stone",
@@ -21,7 +21,7 @@ namespace Bookstore
                 Year = 1997
             });
 
-			bookList.Add(new Book()
+			bookList.Add (new Book()
 			{
 				Author = "J.K. Rowling",
 				Name = "Harry Potter and the Chamber of Secrets",
@@ -29,15 +29,35 @@ namespace Bookstore
 				Year = 1998
 			});
 
-			bookList.Add(new Book()
+			bookList.Add (new Book()
 			{
 				Author = "J.K. Rowling",
-				Name = "Harry Potter and the Sorcerer's Stone",
+				Name = "Harry Potter and the Prisoner of Azkaban",
 				Publisher = "Bloomsbury",
 				Year = 1999
 			});
         }
 
+        public override nint NumberOfSections(UITableView tableView)
+        {
+            return 1;
+        }
+
+        public override nint RowsInSection(UITableView tableView, nint section)
+        {
+            return bookList.Count;
+        }
+
+        public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
+        {
+            var cell = tableView.DequeueReusableCell("Book");
+
+            var data = bookList [indexPath.Row];
+
+            cell.TextLabel.Text = data.Name;
+
+            return cell;
+        }
     }
 
     public class Book 
