@@ -100,10 +100,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="BooksTableView.cs" />
-    <Compile Include="BooksTableView.designer.cs">
-      <DependentUpon>BooksTableView.cs</DependentUpon>
-    </Compile>
     <Compile Include="BooksTableViewController.cs" />
     <Compile Include="BooksTableViewController.designer.cs">
       <DependentUpon>BooksTableViewController.cs</DependentUpon>
@@ -111,6 +107,10 @@
     <Compile Include="UI.cs" />
     <Compile Include="UI.designer.cs">
       <DependentUpon>UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookTableViewCell.cs" />
+    <Compile Include="BookTableViewCell.designer.cs">
+      <DependentUpon>BookTableViewCell.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
